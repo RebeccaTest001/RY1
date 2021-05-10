@@ -1,0 +1,11 @@
+<apex:page standardController="Case">
+    <!--standandController 可以让contact和这个visual force page 连起来，知道这个page专门为contact来写的-->
+    <div>
+        Hello world
+    </div>
+    <div>
+        <c:Comp01 />
+          <!--c means custom, c:Comp01 means refer to Comp01.vfc-->
+        
+    </div>
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page standardController="Account" recordSetVar=""> <!--accounts没有用上？？？-->
+    <apex:form >
+    	<apex:selectList value="{!filterid}" size="1"> <!--{!fielterid 是系统里已经有的，没有用recordSetVar??-->
+        	<apex:selectOptions value="{!listviewoptions}">            
+            </apex:selectOptions>
+        </apex:selectList>
+        <apex:commandButton value="GO!" action="{!list}"/>    
+    </apex:form>   
+</apex:page>

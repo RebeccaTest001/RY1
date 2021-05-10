@@ -1,0 +1,5 @@
+<apex:page showHeader="false" >
+    <apex:image url="https://developer.salesforce.com/files/salesforce-developer-network-logo.png" />
+//  <a href="https://google.com.au" > <apex:image url="https://developer.salesforce.com/files/salesforce-developer-network-logo.png" Alt="Click Here"/></a>
+    
+</apex:page>

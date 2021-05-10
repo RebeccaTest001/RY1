@@ -1,0 +1,6 @@
+<apex:component >
+    <!--注释：apex:component only could be refereced by visualforce page , could not be revoked by itself-->
+    I am Comp01
+    
+    qing ye
+</apex:component>

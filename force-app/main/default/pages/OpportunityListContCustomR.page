@@ -1,0 +1,8 @@
+<apex:page controller="OpportunityListCont"> <!--请一条条解释一下-->
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!Opportunities}" var="o"> <!--Define "opportunities" method inside of this custom list controller "OpportunityListCont"-->
+            <apex:column value="{!o.Name}"/>  <!--value="{!Opportunities}"是一个collection container, 用来放所有返回的数据-->
+            <apex:column value="{!o.CloseDate}"/>  <!--var="o"是每一个变量，每次只有一个值-->
+        </apex:pageBlockTable>    
+    </apex:pageBlock>
+</apex:page>

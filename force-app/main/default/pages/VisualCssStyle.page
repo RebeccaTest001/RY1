@@ -1,0 +1,7 @@
+<apex:page showHeader="false" sidebar="false" >
+    <apex:stylesheet value="{!$Resource.visualCSSSTYLE}"/>
+    <h1>Welcome to my Tutorial Rack</h1>
+    <p>第一个值里面包括后面的值,区分大小写。包括，结果是true,不包括结果是false</p>
+    <!--<apex:outputText styleClass="sale">结果是true,不包括结果是false</apex:outputText> not working this way-->    
+    <apex:outputText styleClass="sale" value="Test CSS sales"/>  <!--working-->
+</apex:page>

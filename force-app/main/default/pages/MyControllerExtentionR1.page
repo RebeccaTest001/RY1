@@ -1,0 +1,7 @@
+<apex:page standardController="Account" extensions="MyControllerExtensionR1">
+    {!greeting}
+    <apex:form >
+        <apex:inputField value="{!account.name}"/>
+        <apex:commandButton value="save" action="{!save}"/> <!--怎么区分这个save是standard object method,还是custom的？？？-->
+    </apex:form>
+</apex:page>

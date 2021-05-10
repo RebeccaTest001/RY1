@@ -1,0 +1,11 @@
+<!--recordSetVar="Accounts" tabStyle="Account"什么意思？？？？-->
+<apex:page standardController="Account" recordSetVar="Accounts" tabStyle="Account" sidebar="false">
+	<apex:pageBlock >
+    	<apex:form >
+        	<apex:pageBlockTable value="{!accounts}" var="acc" id="list">
+                <apex:column value="{!acc.Name}"/>
+                <apex:column value="{!acc.AccountNumber}"/>
+            </apex:pageBlockTable>
+        </apex:form>    
+    </apex:pageBlock>
+</apex:page>

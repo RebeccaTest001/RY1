@@ -1,0 +1,134 @@
+* {
+//选取全文
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 1em 10%;
+//  background-image: url(../images_book/background.gif);
+  background-attachment: fixed;
+  background-position: top left;
+//  background-repeat: repeat;;
+
+}
+#header {
+  background-image: url(../images_book/guitarist.gif);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  border-width: .1em;
+  border-style: solid;
+  border-bottom-width: 0;
+}
+#navigation {
+  background-image: url(../images_book/navbar.gif);
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  border-width: .1em;
+  border-style: solid;
+  border-bottom-width: 0;
+  border-top-width: 0;
+  padding-left: 10%;
+}
+#navigation ul {
+	//tag 里面有个ID 是navigation, ul是包括在这个有navigation的id 的tag下面
+  width: 100%;
+  overflow: hidden;
+  border-left-width: .1em;
+  border-left-style: solid;
+}
+#navigation li {
+  display: inline;
+}
+#navigation li a {tag 里面有个ID 是navigation, li是包括在这个有navigation的id 的tag下面,li里有个<a>tag
+  display: block;
+  float: left;
+  padding: .5em 2em;
+  border-right: .1em solid;
+}
+#content {//content是个id
+  border-width: .1em;
+  border-style: solid;
+  border-top-width: 0;
+  padding: 2em 10%;
+  line-height: 1.8em;
+}
+#about #header {//about & header都是id attribute
+  background-image: url(../images_book/lineup.gif);
+}
+#photos #header {
+  background-image: url(../images_book/basshead.gif);
+}
+#live #header {
+  background-image: url(../images_book/bassist.gif);
+}
+#contact #header {
+  background-image: url(../images_book/drummer.gif);
+}
+#content img {
+  border-width: .1em;
+  border-style: solid;
+  outline-width: .1em;
+  outline-style: solid;
+}
+#imagegallery li {
+  display: inline;
+}
+#slideshow {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+img#frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  border-width: 0;
+  outline-width: 0;
+}
+table{
+	padding:2em 10em;
+}
+td{
+	padding:.5em 3em;
+}
+th{
+	color:#edc;
+	background-color:#455;
+}
+tr td{
+	color:#223;
+	background-color:#eb6;
+}
+#t1{
+	padding:.5em 10em;	
+}
+dl{
+	overflow:hidden;
+}
+dt,dd{
+	float:left;
+}
+label{
+	display:block;
+}
+fieldset{
+	border:0;
+}
+
+fieldset p{
+	padding:1em 1em;
+}
+
+
+
+
+
+
+
+
+
+
+

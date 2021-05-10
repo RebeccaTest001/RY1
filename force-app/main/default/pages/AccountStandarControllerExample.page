@@ -1,0 +1,20 @@
+<apex:page standardController="Account"><!--standardControlleris an attribute, Account里面包含了很多的针对account 这个APEX CLASS的逻辑在里面-->
+<!--	<apex:detail/>-->  <!--什么意思??-->
+<!--    <apex:relatedList list="contacts"/>-->  <!--什么意思??-->
+<!--    <apex:detail relatedList="false"/> --> <!--什么意思??-->
+<!--    <apex:outputField value="{!account.name}"-->  <!--如何指定一个account,然后显示这个account name only在另外一个页面-->
+
+    <apex:form ><!--how to put it into related list?-->
+        <apex:pageBlock title="Block1" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="save" action="{!save}"/><!--responsible for insert new record or update existing record.update不工作，为什么？？？-->            
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Block Section 1" columns="2">
+                <apex:inputField value="{!account.name}"/><!--value是一个变量object:account, field:name-->
+                <apex:inputField value="{!account.site}"/> <!--<inputField 里面的value一定是一个变量> <inputText/>不是变量-->
+                <apex:inputField value="{!account.type}"/>
+                <apex:inputField value="{!account.AccountNumber}"/>
+            </apex:pageBlockSection>            
+        </apex:pageBlock>
+    </apex:form>   
+</apex:page>

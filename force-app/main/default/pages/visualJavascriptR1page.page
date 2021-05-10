@@ -1,0 +1,13 @@
+<apex:page showHeader="false" sidebar="false">
+    <!--<apex:stylesheet value="{!$Resource.visualCSSSTYLE}"/>-->
+    <apex:includeScript value="{!$Resource.VisualJavascript}"/>
+    <apex:outputPanel layout="block" id="panelFont"> <!--Visualforce page里面调用Javascript-->
+    	<label for="checkB">Click this box to change text font:</label> <!--HTML tag???-->
+        <!--onClick="changeFont(this,'{!$Component.panelFont}');" ChangeFont是Javascript定义的一个method,this是Input的值传过来，panelFont是ID的value-->
+        <!--{!$component.panelFont}是bTextid的值传过来-->
+        <input id="checkB" type="checkbox" onClick="changeFont(this,'{!$Component.panelFont}');"/> <!--HTML tag??? -->
+    </apex:outputPanel>
+    <apex:outputPanel layout="block" id="thePanel">
+    	outPutPanel Test        
+    </apex:outputPanel>
+</apex:page>

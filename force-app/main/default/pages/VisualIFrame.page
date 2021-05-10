@@ -1,0 +1,3 @@
+<apex:page >
+    <apex:iframe src="https://www.google.com.au/" width="500" height="700"/> <!--不工作？？-->
+</apex:page>

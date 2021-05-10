@@ -1,0 +1,10 @@
+<apex:page standardController="Account" recordSetVar="accts"> <!--recordSetVar="accts"是variable represents,是list of accounts. holds all object Account records, the table name is accounts. deal with multiple records"-->
+	<apex:pageBlock >
+        <apex:pageBlockTable value="{!accts}" var="a"> <!--the value has to be the same as recordSetVar:eg:"accts". {!accts} hold all of the records values. like new array?-->
+            <apex:column value="{!a.name}"/>  <!--var="a"是一个current value of account-->
+            <apex:column value="{!a.accountNumber}"/> <!--display account name and account number. 为什么只有两个record被display了？？-->
+        </apex:pageBlockTable> <!--pageBlockTable一般用在loop循环里-->
+    
+    </apex:pageBlock>
+
+</apex:page>

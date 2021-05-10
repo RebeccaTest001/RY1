@@ -1,0 +1,19 @@
+<apex:page standardController="opportunity" recordSetVar="opp" sidebar="false">
+    <apex:form >
+    	<apex:pageBlock >
+     		<apex:pageBlockTable value="{!opp}" var="p">
+                <apex:column value="{!p.Name}"/>
+<!--                <apex:column value="{!p.StageName}"/>--> <!--只显示已经选的名字，不能改-->
+                <apex:column headervalue="Stage"> <!--加header和inputField,可以从picklist里面选数值-->
+                    <apex:inputField value="{!p.StageName}"/>
+                </apex:column>
+                <apex:column headervalue="Closed Date for Opp">
+                    <apex:inputField value="{!p.CloseDate}"/>
+                </apex:column>                             
+            </apex:pageBlockTable>
+        	<apex:pageBlockButtons >
+                <apex:commandButton value="save the records" action="{!save}"/>    
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

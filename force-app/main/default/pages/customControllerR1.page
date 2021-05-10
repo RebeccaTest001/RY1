@@ -1,0 +1,8 @@
+<apex:page controller="customControllerR1" > <!--引用apex class: customControllerR1 请详细讲解这个page和相关的apex class-->
+    <apex:form >
+        <apex:pageBlock title="Congratulations {!$User.FirstName}"><!--global variable都是加$.-->
+            You belong to the Account Name:<apex:inputField value="{!abc.name}"/>  
+            <apex:commandButton action="{!savetheRecord}" value="save"/> <!--"{!savetheRecord}"是一个自定义custom action, value="save" 也是自定义的-->
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

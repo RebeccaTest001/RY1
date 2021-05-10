@@ -1,0 +1,22 @@
+<apex:page standardController="Account">
+    <style>
+    p,h1,h2,div{font-family:sans-serif; font-size:20px;}
+    </style>
+	<apex:form >
+        <h1>{!Account.Name}</h1> <br/>
+        <h2>Account Details</h2> <br/>
+        <div id="theAccForm">
+            <div>
+                <apex:outputLabel for="accName"   value="Account Name"/>
+                <apex:inputField id="accName" value="{!Account.Name}"/>             
+            </div>
+            <div>
+                <apex:outputLabel for="NoOfEmp" value="Number of Employees"/>
+                <apex:inputField id="NoOfEmp" value="{!Account.NumberOfEmployees}"/>
+            </div>
+            <div>
+                <apex:commandButton action="{!save}" value="Account Save"/>
+            </div>
+        </div>        
+    </apex:form>    
+</apex:page>

@@ -1,0 +1,104 @@
+<apex:page sidebar="true" showHeader="true"> <!--如果在console上写，会自动存进salesforce吗？如果直接在salesforce里写，会自动在console中搜寻吗？如何被使用？？-->
+   <apex:form >
+       <apex:pageBlock >
+          <Apex:pageBlock title="FirstBlock: pageBlockSection"> 
+             <Apex:pageBlockSection title="First Section">
+               <h1>Hello, this is my first visualforce page</h1>
+               <br/>
+               Hello, this is my first visualforce page
+            </Apex:pageBlockSection>
+                  <Apex:pageBlockSection title="Second Section">  <!--title是attribute-->
+               <Apex:pageBlockSectionItem >abc </Apex:pageBlockSectionItem>
+               <Apex:pageBlockSectionItem >abc </Apex:pageBlockSectionItem>          
+               <Apex:pageBlockSectionItem >abc </Apex:pageBlockSectionItem>         
+           </Apex:pageBlockSection>
+        </apex:pageBlock>
+    
+        <apex:pageBlock title="Second Block:">
+            <apex:pageBlockSection title="Third Section: pageMessage">
+                <apex:pageMessage severity="error" strength="2" summary="Validation messages appear in the page message component. This page message will always disappear.">
+                    <!--severity type:confirm,info,error,warning. Strenth:icon size. summary: words next to the icon to explain what it is -->
+                </apex:pageMessage> <!--pageMessage & pageMessages有什么区别？？？-->
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Third Block:panelBarItem">
+            <apex:panelBar > 
+                <apex:panelBarItem label="Item1" onEnter="alert('Note:you are entering item1');"  onLeave="alert('Note:you are leaving item1');">Hello, how are you? this is item1</apex:panelBarItem>
+                <apex:panelBarItem label="Item2" onEnter="alert('you are entering item2');" onLeave="alert('you are leaving item2');">Hello, how are you? this is item2</apex:panelBarItem> <!--onEnter & onLeave是两个attributes.可以用alert的形式来提示进入或者离开-->            
+                <apex:panelBarItem label="Item3">Hello, how are you? this is item3</apex:panelBarItem>
+            </apex:panelBar>
+        </apex:pageBlock>
+        <apex:pageBlock title="Forth Block:panelGridColumn"> <!--id is an idenfier that allows components to be referenced by other components in the page-->
+            <apex:panelGrid columns="3" id="theGrid" border="3">
+                <apex:outputText value="First" id="theFirst"></apex:outputText>
+                <apex:outputText value="Second" id="theSecond"></apex:outputText>
+                <apex:outputText value="Third" id="theThird"></apex:outputText>
+                <apex:outputText value="Forth" id="theForth"></apex:outputText>
+                <apex:outputText value="Fifth" id="theFifth"></apex:outputText>
+                <apex:panelGroup > <!--the column values(six,seven) in this group will be merged into one cell, 原来是九个cell现在变成了八个-->
+                    <apex:outputText value="six" id="thesixth"></apex:outputText>
+                    <apex:outputText value="seven" id="theSeventh"></apex:outputText>
+                </apex:panelGroup>
+                <apex:outputText value="Eighth" id="theEighth"></apex:outputText>
+                <apex:outputText value="nineth" id="thenineth"></apex:outputText>
+            </apex:panelGrid>
+        </apex:pageBlock>
+        <apex:pageBlock title="Fifth Block:tabPanel&tab">
+            <apex:tabPanel > <!--apex:tab must be a child of apex:tabPanel-->
+                <apex:tab Label="tab1" name="tab1name" id="tab1ID">this is tab1</apex:tab>
+                <apex:tab label="tab2" name="tab2name" id="tab2ID">this is tab2</apex:tab>
+                <apex:tab label="tab3" name="tab3name" id="tab3ID">this is tab3</apex:tab>         
+            </apex:tabPanel>
+        </apex:pageBlock>
+        <apex:pageBlock title="sixth Block:toolbar&toolbarGroup">
+           <apex:toolbar id="toolbar"><!--all child components are aligned to the left side of toolbar-->
+               <apex:outputText value="Sample Toolbar"></apex:outputText>
+               <apex:toolbarGroup itemSeparator="line" id="theToolbarLinks"><!--toolbarGroup align one or more child components to the right or left 	 side of toolbar-->
+               <!--attributes: itemSeparator(value:"none""line""square""disc" "grid"--> 
+                   <apex:outputLink value="http://www.salesforce.com">Salesforce</apex:outputLink>
+                   <apex:outputLink value="http://google.com.au">Google</apex:outputLink>
+               </apex:toolbarGroup> <!--toolbarGroup must to be a child component of an <apex:toolbar>-->
+<!--  方法一   <apex:toolbarGroup itemSeparator="line" location="right">
+               	   <apex:outputLabel value="Enter Text:" for="toolbarGroup2"></apex:outputLabel>
+                   <apex:inputText id="toolbarGroup2"/> 
+                   <apex:outputLink value="http://www.google.com.au">Search</apex:outputLink>
+               </apex:toolbarGroup>-->
+<!--方法二-->  <apex:toolbarGroup itemSeparator="line" location="right" id="toolbarGroup2">
+                        <apex:inputText id="theInputText">Enter Text: </apex:inputText>
+                        <apex:commandLink value="Search" id="theCommandLink"/><!--commandLink 必须在一个apex:form里-->
+               </apex:toolbarGroup>             
+           </apex:toolbar>
+        </apex:pageBlock>
+                 
+         <apex:pageBlock title="Seventh Block: Input Block">           
+       		 <h1>Please fill the below details</h1><br/><br/>
+        		Enter Name:<apex:inputText id="name"/><br/><br/> <!--id are unique identifier, how to check this id in the future-->
+        		Enter Age:<apex:inputText id="age"/><br/><br/> <!--Enter Age是input label???产生的可以写东西的长方块叫input field-->
+        		Enter Username:<apex:inputText id="username"/><br/><br/><!--value是什么东西？？-->
+        		Enter Password:<apex:inputSecret id="password"/><br/><br/>
+        		Cover Letter:<apex:inputTextArea id="coverLetter"/><br/><br/>
+        		Are you currently employed:<apex:inputCheckbox id="employed"/><br/><br/>
+
+<!--				<apex:pageBlockButtons>
+           	 		<apex:commandButton value="Save"/> 
+           	 		<apex:commandButton value="Cancel"/> 
+					</apex:pageBlockButtons>
+-->
+            <apex:commandButton value="Save" />
+        </apex:pageBlock> 
+  		<apex:pageBlock title="Eighth Block: Output Block">
+            <apex:outputLabel value="Enter Name: " for="name"></apex:outputLabel> <!--和上面的结果是一样的，不一样的写法？？？-->
+            <apex:inputText id="name"/> <br/><br/>
+            
+            <apex:outputLabel value="Enter Age:" for="Age"></apex:outputLabel> <!--和上面的结果是一样的，不一样的写法？？？-->
+            <apex:inputText id="Age"/> <br/><br/>
+            <apex:outputLink value="https://google.com.au">Google</apex:outputLink>
+        </apex:pageBlock>  
+          
+           <apex:pageBlockButtons > <!--指定在最外层的pageBlock中即可-->
+               <apex:commandButton value="save"/>   <!--如果没有apex:pageBlockButtons, button自动出现在左边,只出现在指定的地方一次，有这个，button出现在中间，top & buttom两次-->
+               <apex:commandButton value="close"/>   <!--value 是apex:commandButton的一个attribute(属性)-->
+           </apex:pageBlockButtons> 
+  </apex:pageBlock>          
+  </apex:form> 
+</apex:page>

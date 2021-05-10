@@ -1,0 +1,14 @@
+<apex:page standardController="Account">
+    <script>
+    	alert("Hello world");
+    </script>
+    <Apex:pageBlock title="Account Info">
+		<Apex:pageBlockSection >
+        	Name:{!Account.Name}
+            <br/>
+            Phone:{!Account.Phone}
+            <br/>
+            Owner:{!Account.Owner.FirstName & "" & Account.Owner.LastName}
+        </Apex:pageBlockSection>    
+    </Apex:pageBlock>
+</apex:page>
